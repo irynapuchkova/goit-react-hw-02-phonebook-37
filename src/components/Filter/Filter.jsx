@@ -1,8 +1,21 @@
+import PropTypes from 'prop-types';
+import { Title, Input, Wrapper } from './Filter.styled';
+
 export default function Filter({ value, onChange }) {
   return (
-    <div>
-      <p>Find contacts by name</p>
-      <input type="text" value={value} onChange={onChange} />
-    </div>
+    <Wrapper>
+      <Title>Find contacts by name</Title>
+      <Input
+        type="text"
+        placeholder="Filter"
+        value={value}
+        onChange={onChange}
+      />
+    </Wrapper>
   );
 }
+
+Filter.propTypes = {
+  value: PropTypes.string,
+  onChange: PropTypes.func,
+};

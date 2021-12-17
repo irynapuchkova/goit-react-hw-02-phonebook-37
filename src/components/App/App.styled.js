@@ -1,40 +1,19 @@
-// import styled from '@emotion/styled';
+import styled from '@emotion/styled';
 
-// .App {
-//   text-align: center;
-// }
+export const FormSet = styled.div`
+  font: 95% Arial, Helvetica, sans-serif;
+  max-width: 400px;
+  margin: 10px auto;
+  padding: 16px;
+  background: #f7f7f7;
+`;
 
-// .App-logo {
-//   height: 40vmin;
-//   pointer-events: none;
-// }
-
-// @media (prefers-reduced-motion: no-preference) {
-//   .App-logo {
-//     animation: App-logo-spin infinite 20s linear;
-//   }
-// }
-
-// .App-header {
-//   background-color: #282c34;
-//   min-height: 100vh;
-//   display: flex;
-//   flex-direction: column;
-//   align-items: center;
-//   justify-content: center;
-//   font-size: calc(10px + 2vmin);
-//   color: white;
-// }
-
-// .App-link {
-//   color: #61dafb;
-// }
-
-// @keyframes App-logo-spin {
-//   from {
-//     transform: rotate(0deg);
-//   }
-//   to {
-//     transform: rotate(360deg);
-//   }
-// }
+export const Title = styled.h1`
+  background: #43d1af;
+  padding: 20px 0;
+  font-size: 140%;
+  font-weight: 300;
+  text-align: center;
+  color: #fff;
+  font-weight: 600;
+`;

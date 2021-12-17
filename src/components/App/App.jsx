@@ -1,9 +1,10 @@
 import { Component } from 'react';
+import shortid from 'shortid';
 
 import ContactForm from 'components/ContactForm';
 import Filter from 'components/Filter';
 import ContactList from 'components/ContactList';
-import shortid from 'shortid';
+import { Title, FormSet } from './App.styled';
 
 export default class App extends Component {
   state = {
@@ -30,7 +31,7 @@ export default class App extends Component {
       };
 
       this.setState(prevState => ({
-        contacts: [...prevState.contacts, newContact],
+        contacts: [newContact, ...prevState.contacts],
       }));
     }
   };
@@ -66,17 +67,17 @@ export default class App extends Component {
     const filteredContactsList = this.filterContacts(contacts);
 
     return (
-      <div>
-        <h1>Phonebook</h1>
+      <FormSet>
+        <Title>Phonebook</Title>
         <ContactForm onSubmit={this.formSubmitHandle} />
 
-        <h2>Contacts</h2>
+        <Title>Contacts</Title>
         <Filter value={filter} onChange={this.handleFilter} />
         <ContactList
           contacts={filteredContactsList}
           onClick={this.deleteContact}
         />
-      </div>
+      </FormSet>
     );
   }
 }
