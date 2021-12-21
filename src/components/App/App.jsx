@@ -23,36 +23,29 @@ export default class App extends Component {
 
     if (contactsNames.includes(name)) {
       return alert(`${name} is already in contacts`);
-    } else {
-      const newContact = {
-        id: shortid.generate(),
-        name,
-        number,
-      };
-
-      this.setState(prevState => ({
-        contacts: [newContact, ...prevState.contacts],
-      }));
     }
+
+    const newContact = {
+      id: shortid.generate(),
+      name,
+      number,
+    };
+
+    this.setState(prevState => ({
+      contacts: [newContact, ...prevState.contacts],
+    }));
   };
 
   handleFilter = e => {
-    const filterValue = e.currentTarget.value.toLowerCase();
-    console.log(filterValue);
+    const filterValue = e.currentTarget.value;
     this.setState({ filter: filterValue });
   };
 
   filterContacts = data => {
     const { filter } = this.state;
-    let filteredContactsList = [];
-
-    data.filter(contact => {
-      if (contact.name.toLowerCase().includes(filter)) {
-        return filteredContactsList.push(contact);
-      } else {
-        return filteredContactsList;
-      }
-    });
+    const filteredContactsList = data.filter(contact =>
+      contact.name.toLowerCase().includes(filter),
+    );
     return filteredContactsList;
   };
 

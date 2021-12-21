@@ -11,7 +11,7 @@ export default class ContactForm extends Component {
     e.preventDefault();
 
     this.props.onSubmit(this.state);
-    this.reset();
+    this.resetState();
   };
 
   handleInputValue = e => {
@@ -19,7 +19,7 @@ export default class ContactForm extends Component {
     this.setState({ [name]: value });
   };
 
-  reset = () => {
+  resetState = () => {
     this.setState({ name: '', number: '' });
   };
 
